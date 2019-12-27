@@ -15,3 +15,18 @@ myApp.controller('mainController', function($scope) {
     console.log($scope);
 
 });
+
+
+const searchPerson = function($scope, lastname) {
+    console.log('Yan Pustynnyy');
+}
+
+// when we log a function like this
+console.log(searchPerson);
+
+// we get a function body as a string
+// which we can parse and determine what argument it has
+// so we can inject something there
+// That's what angularjs does
+// it injects $scope object into the function so we can access it
+console.log(angular.injector().annotate(searchPerson));
