@@ -12,10 +12,17 @@
 <body>
 
     <div class="container" ng-controller="mainController">
-        <h1> Hello world!</h1>
+        <form name="myForm" action="">
+            <input type="text" name="myField" ng-model="field" required minlength="5">
+            <div ng-messages="myForm.myField.$error">
+                <div class="alert alert-danger" ng-message="required">You did not enter a field</div>
+                <div class="alert alert-danger" ng-message="minlength">The value entered is too short</div>
+            </div>
+        </form>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-messages.min.js"></script>
     <script src="app.js"></script>
 </body>
 

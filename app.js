@@ -1,8 +1,8 @@
 // Second argument is the list of dependencies
-const myApp = angular.module('myApp', []);
+const myApp = angular.module('myApp', ['ngMessages']);
 
 // Controller defines a place to put the code associated with the module
-myApp.controller('mainController', function($scope) {
+myApp.controller('mainController', function($scope, $log, $filter) {
 
 
     // Scope is a middlething between the view and controller
@@ -10,9 +10,18 @@ myApp.controller('mainController', function($scope) {
     // but only inside this controller (mainController in this case)
     $scope.name = 'Yan';
     $scope.getName = function() {
-        console.log($scope.name);
+        // we can use $log methods as safer alternative of console.log
+        $log.info($scope.name);
     }
-    console.log($scope);
+    $log.info($scope);
+
+    $scope.filteredName = $filter('uppercase')($scope.name);
+
+    $log.info($scope.filteredName);
+
+
+
+
 
 });
 
