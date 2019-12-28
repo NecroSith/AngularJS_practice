@@ -1,8 +1,8 @@
 // Second argument is the list of dependencies
-const myApp = angular.module('myApp', ['ngMessages']);
+const myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
 // Controller defines a place to put the code associated with the module
-myApp.controller('mainController', function($scope, $log, $filter) {
+myApp.controller('mainController', function($scope, $log, $filter, $resource) {
 
 
     // Scope is a middlething between the view and controller
@@ -14,6 +14,7 @@ myApp.controller('mainController', function($scope, $log, $filter) {
         $log.info($scope.name);
     }
     $log.info($scope);
+    $log.info($resource);
 
     $scope.filteredName = $filter('uppercase')($scope.name);
 
