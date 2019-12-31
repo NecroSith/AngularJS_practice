@@ -10,8 +10,11 @@
 </head>
 
 <body>
-
     <div class="container" ng-controller="mainController">
+
+        <h1>Hello {{ name + '! How are you today?'}}</h1>
+
+
         <form name="myForm" action="">
             <input type="text" name="myField" ng-model="field" required minlength="5">
             <div ng-messages="myForm.myField.$error">

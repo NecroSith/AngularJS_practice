@@ -11,7 +11,7 @@ const myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 // with the arguments preset angular can determine what methods are used in the controller function by checking first arguments in the array and using dependecny injection
 //! Order of the first arguments matters because angularjs dependency injector will look into them and insert according objects into the function in the order of appearance in the arguments list
 //! If we don't use this method and list all angular methods right in the controller function - the order in this case doesn't matter
-myApp.controller('mainController', ["$scope", "$log", "$filter", "$resource", function($scope, $log, $filter, $resource) {
+myApp.controller('mainController', ["$scope", "$log", "$filter", "$timeout", function($scope, $log, $filter, $timeout) {
 
 
     // Scope is a middlething between the view and controller
@@ -23,7 +23,12 @@ myApp.controller('mainController', ["$scope", "$log", "$filter", "$resource", fu
         $log.info($scope.name);
     }
     $log.info($scope);
-    $log.info($resource);
+    // $log.info($resource);
+
+
+    $timeout(function() {
+        $scope.name = 'everyone';
+    }, 5000);
 
     $scope.filteredName = $filter('uppercase')($scope.name);
 
