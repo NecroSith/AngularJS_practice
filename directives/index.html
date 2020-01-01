@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" ng-controller="mainController">
+
+        <h1>Hello {{ name + '! What\'s your twitter id?'}}</h1>
+
+        <!-- ng-model binds this input to the scope (in this case) variable. It can also be binded to an ardinary variable -->
+        <input type="text" name="twitter" ng-model='twitterId'>
+
+        <!-- Binded variable value is displayed here. -->
+        <!-- We define scope variable value in the input. It passes to the controller, from there it passes to this h1. This is how two-way data binding in angularjs works -->
+        <h2>twitter.com/{{ twitterIdLowerCase()}}</h2>
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-resource.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
