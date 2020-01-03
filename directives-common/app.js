@@ -14,5 +14,9 @@ myApp.controller('mainController', ["$scope", "$filter", function($scope, $filte
         { rulename: 'Must be at least 2 characters' },
         { rulename: 'Must not be empty' },
         { rulename: 'Must be cool' }
-    ]
+    ];
+
+    $scope.alertClick = function() {
+        alert('Clicked!');
+    }
 }]);
