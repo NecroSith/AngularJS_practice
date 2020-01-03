@@ -18,7 +18,7 @@
         <input type="text" name="twitter" ng-model='twitterId'>
 
         <!-- Binded variable value is displayed here. -->
-        <!-- We define scope variable value in the input. It passes to the controller, from there it passes to this h1. This is how two-way data binding in angularjs works -->
+        <!-- We define scope variable value in the input. It passes to the controller, from there it passes to this h1. Therefore, data in view can change data in controller and data in controller can change data in view. This is how two-way data binding in angularjs works -->
         <h2>twitter.com/{{ twitterIdLowerCase()}}</h2>
 
 
