@@ -9,4 +9,10 @@ myApp.controller('mainController', ["$scope", "$filter", function($scope, $filte
     };
 
     $scope.characters = 2;
+
+    $scope.rules = [
+        { rulename: 'Must be at least 2 characters' },
+        { rulename: 'Must not be empty' },
+        { rulename: 'Must be cool' }
+    ]
 }]);
