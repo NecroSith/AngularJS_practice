@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" ng-controller="mainController">
+
+        <h1>Hello {{ name + '! How are you today?'}}</h1>
+
+        <!-- What comes after hash is called fragment identifier. It is put into page hash upon click on the link -->
+        <a href="#bookmark">Go to a booknark</a>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe odio temporibus vel neque consequuntur eum reiciendis numquam mollitia provident nostrum, fugit rem facilis. Aliquam in rem facilis. Qui, ratione dolorem. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Obcaecati consequuntur vel mollitia exercitationem blanditiis excepturi, magnam, qui inventore, consequatur tempore officiis reprehenderit recusandae quas soluta eaque ex numquam non facere! Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit. Iure, odio aut, nam temporibus nulla labore debitis id facere, nihil ipsum quos quam molestias aliquam placeat! Minima totam repellat ea expedita! Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Voluptatum nesciunt eligendi, architecto nobis corrupti odio dolor officiis quam consequuntur sed? Praesentium voluptates repellendus sapiente tenetur qui facere cumque, eaque minima. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Distinctio, reiciendis commodi tempore, illo pariatur earum nostrum quae vero aspernatur quasi sapiente nam eaque aliquid? Repellat aspernatur necessitatibus commodi facilis ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Dolor quidem repellendus voluptatibus voluptatem quis accusantium perferendis quasi quisquam, nobis id ab modi quae magnam illum eveniet libero ea in nisi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis maiores labore
+            inventore nihil iure rerum eius quibusdam nesciunt eligendi dolor voluptatem, commodi, corporis, officia non natus? Harum molestiae doloribus sunt! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae veritatis eius ab in, repudiandae
+            vel nam facilis earum a ipsam magnam. Cum voluptates excepturi molestiae consequuntur voluptate reiciendis delectus optio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusamus quas ex, cupiditate minus perspiciatis,
+            molestias recusandae sapiente eius facere corrupti, ipsum rem. Iste, ducimus accusamus soluta est nesciunt vitae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam non numquam, nulla sequi magnam, labore id doloremque
+            blanditiis minima suscipit praesentium quisquam expedita laboriosam illum ipsum aliquid totam? Similique?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe odio temporibus vel neque consequuntur eum reiciendis numquam mollitia provident nostrum, fugit rem facilis. Aliquam in rem facilis. Qui, ratione dolorem. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Obcaecati consequuntur vel mollitia exercitationem blanditiis excepturi, magnam, qui inventore, consequatur tempore officiis reprehenderit recusandae quas soluta eaque ex numquam non facere! Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit. Iure, odio aut, nam temporibus nulla labore debitis id facere, nihil ipsum quos quam molestias aliquam placeat! Minima totam repellat ea expedita! Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Voluptatum nesciunt eligendi, architecto nobis corrupti odio dolor officiis quam consequuntur sed? Praesentium voluptates repellendus sapiente tenetur qui facere cumque, eaque minima. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Distinctio, reiciendis commodi tempore, illo pariatur earum nostrum quae vero aspernatur quasi sapiente nam eaque aliquid? Repellat aspernatur necessitatibus commodi facilis ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Dolor quidem repellendus voluptatibus voluptatem quis accusantium perferendis quasi quisquam, nobis id ab modi quae magnam illum eveniet libero ea in nisi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis maiores labore
+            inventore nihil iure rerum eius quibusdam nesciunt eligendi dolor voluptatem, commodi, corporis, officia non natus? Harum molestiae doloribus sunt! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae veritatis eius ab in, repudiandae
+            vel nam facilis earum a ipsam magnam. Cum voluptates excepturi molestiae consequuntur voluptate reiciendis delectus optio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusamus quas ex, cupiditate minus perspiciatis,
+            molestias recusandae sapiente eius facere corrupti, ipsum rem. Iste, ducimus accusamus soluta est nesciunt vitae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam non numquam, nulla sequi magnam, labore id doloremque
+            blanditiis minima suscipit praesentium quisquam expedita laboriosam illum ipsum aliquid totam? Similique?</p>
+
+        <a href="#" id="bookmark">This is a bookmark</a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe odio temporibus vel neque consequuntur eum reiciendis numquam mollitia provident nostrum, fugit rem facilis. Aliquam in rem facilis. Qui, ratione dolorem. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Obcaecati consequuntur vel mollitia exercitationem blanditiis excepturi, magnam, qui inventore, consequatur tempore officiis reprehenderit recusandae quas soluta eaque ex numquam non facere! Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit. Iure, odio aut, nam temporibus nulla labore debitis id facere, nihil ipsum quos quam molestias aliquam placeat! Minima totam repellat ea expedita! Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Voluptatum nesciunt eligendi, architecto nobis corrupti odio dolor officiis quam consequuntur sed? Praesentium voluptates repellendus sapiente tenetur qui facere cumque, eaque minima. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Distinctio, reiciendis commodi tempore, illo pariatur earum nostrum quae vero aspernatur quasi sapiente nam eaque aliquid? Repellat aspernatur necessitatibus commodi facilis ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Dolor quidem repellendus voluptatibus voluptatem quis accusantium perferendis quasi quisquam, nobis id ab modi quae magnam illum eveniet libero ea in nisi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis maiores labore
+            inventore nihil iure rerum eius quibusdam nesciunt eligendi dolor voluptatem, commodi, corporis, officia non natus? Harum molestiae doloribus sunt! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae veritatis eius ab in, repudiandae
+            vel nam facilis earum a ipsam magnam. Cum voluptates excepturi molestiae consequuntur voluptate reiciendis delectus optio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusamus quas ex, cupiditate minus perspiciatis,
+            molestias recusandae sapiente eius facere corrupti, ipsum rem. Iste, ducimus accusamus soluta est nesciunt vitae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam non numquam, nulla sequi magnam, labore id doloremque
+            blanditiis minima suscipit praesentium quisquam expedita laboriosam illum ipsum aliquid totam? Similique?</p>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-resource.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
