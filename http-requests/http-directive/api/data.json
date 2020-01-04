@@ -1,0 +1,10 @@
+[{
+    "id": 1,
+    "rulename": "Must be at least 2 characters"
+}, {
+    "id": 2,
+    "rulename": "Must not be empty"
+}, {
+    "id": 3,
+    "rulename": "Must be cool"
+}]
