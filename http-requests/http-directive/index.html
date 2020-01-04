@@ -16,13 +16,10 @@
 
         <input type="text" name="twitter" ng-model='twitterId'>
 
-        <!-- Expression inside ng-class is just ordinary JavaScript object so we can add as many classes as we want and in the same way as we add new key-value pairs to JS object -->
         <div class="alert" ng-if="twitterId.length < characters">
             Must be more than 2 characters
         </div>
 
-        <!-- The difference between ng-if and ng-show/ng-hide is that ng-if completely disappears from the DOM if the expression inside it is false -->
-        <!-- ng-show/ng-hide only gets new class 'ng-hide' if the expression is false. ng-hide class puts display: none !important to the element but it stays in the DOM -->
         <div class="alert" ng-hide="false" ng-class="{ 'alert-danger': twitterId.length <= characters, 'alert-success': twitterId.length > characters }">
 
             <div ng-show="twitterId.length <= characters">
@@ -42,13 +39,11 @@
             </li>
         </ul>
 
-
-        <input type="button" ng-click="alertClick()" value="Click me!">
+        <input type="text" name="newRule" id="" placeholder="Describe new rule..." ng-model="newRule">
+        <input type="button" value="Add new rule" ng-click="addNewRule()">
 
         <h2>twitter.com/{{ twitterIdLowerCase()}}</h2>
 
-        <!-- Sometimes on slow machines or on machines with slow internet connection it takes a noticeable amount of time to load the element and get {{name}} substituted with the corresponding variable. When this happens user can notice the element with interpolation {{name}} instead of normal value for a split second. ng-cloak hides the element while it's not processed by JavaScript.  -->
-        <!-- All directive can be checked at the official website in API reference section -->
         <div ng-cloak>{{name}}</div>
 
 

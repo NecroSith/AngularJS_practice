@@ -9,6 +9,26 @@ myApp.controller('mainController', ["$scope", "$filter", "$http", function($scop
     };
 
     $scope.characters = 2;
+    $scope.newRule = '';
+
+    $scope.addNewRule = function() {
+        $http({
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                url: 'http://127.0.0.1:5500/http-requests/http-directive/api/',
+                data: {
+                    rulename: $scope.newRule
+                }
+            })
+            .then(function(response) {
+                $scope.rules = response.data;
+                $scope.newRule = '';
+            }, function(err) {
+                console.log(err);
+            });
+    }
 
     //! Valid until AngularJS v1.4.3
     // $http.get('http://127.0.0.1:5500/http-requests/http-directive/api/data.json')
