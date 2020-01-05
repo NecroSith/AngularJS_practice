@@ -7,3 +7,4 @@
 ### AngularJS Services
 - **ngMessages** (for form validating)
 - **ngResource** (for better data management)
+- **ngRoute** (for route handling)
