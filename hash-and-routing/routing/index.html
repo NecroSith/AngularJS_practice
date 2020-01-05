@@ -7,12 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AngularJS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <base href="#/">
 </head>
 
 <body>
+    <a href="#/">Main</a>
+    <a href="#/second">Second</a>
+    <a href="#/second/3">Second with param</a>
     <div class="container">
 
         <!-- ng-view is where the page template is put if routing is right -->
+        <!-- This is the power of SPAs. In regular HTML website data for each page loads from the ground up including body, head, footer, meta etc -->
+        <!-- it takes a lot of time and speed. With SPA we only load HTML once and then load chunks of data as we need them without loading the whole page again -->
         <div ng-view></div>
     </div>
 
@@ -21,5 +27,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
     <script src="app.js"></script>
 </body>
+
 
 </html>

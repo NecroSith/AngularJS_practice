@@ -1,6 +1,6 @@
 const myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.config(function($routeProvider) {
+myApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'pages/main.html',
@@ -10,6 +10,14 @@ myApp.config(function($routeProvider) {
             templateUrl: 'pages/second.html',
             controller: 'secondController'
         })
+        .when('/second/:num', {
+            templateUrl: 'pages/second.html',
+            controller: 'secondController'
+        })
+
+    // This is to set mode for modern browsers to display url with hash
+    // without it all url comes with '!' before hash symbol
+    $locationProvider.html5Mode(false).hashPrefix('');
 })
 
 myApp.controller('mainController', ["$scope", "$log", "$location", function($scope, $log, $location) {
@@ -23,8 +31,10 @@ myApp.controller('mainController', ["$scope", "$log", "$location", function($sco
 
 // App often has multiple controllers and multiple views (always actually)
 // but it's better to store them in separate js files
-myApp.controller('secondController', ["$scope", "$log", "$location", function($scope, $log, $location) {
 
-    $scope.name = 'Ivan';
+// $routeParams is a part of ngRoute service and gives access to the route parameters 
+myApp.controller('secondController', ["$scope", "$routeParams", function($scope, $routeParams) {
+
+    $scope.name = $routeParams.num || 'default';
 
 }]);
