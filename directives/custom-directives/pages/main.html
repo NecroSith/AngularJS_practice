@@ -1,0 +1,27 @@
+<h1>This is main!</h1>
+<h1>Hello {{ name + '! How are you today?'}}</h1>
+
+<hr>
+
+<input type="text" ng-model="shared" value="{{shared}}">
+
+<hr>
+
+<h3>Search results</h3>
+<div class="list-group">
+    <!-- angular will search for 'searchResults' directive in the controller and normalize this name from camelCase to HTML chain-case -->
+    <!-- This is an element approach -->
+    <search-results></search-results>
+
+    <!-- There is another way to declare custom directive in HTML -->
+    <!-- This is an attribute approach -->
+    <div search-results></div>
+
+    <!-- And a third way -->
+    <!-- This is a class approach -->
+    <div class="search-results"></div>
+
+    <!-- And another way -->
+    <!-- This is a comment approach -->
+    <!-- directive: search-results -->
+</div>
