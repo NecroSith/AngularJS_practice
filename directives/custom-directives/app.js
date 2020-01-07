@@ -67,7 +67,7 @@ myApp.directive('searchResults', function() {
         // it will ignore Attribute approach altogether
         // E for element, A for attribute, C for class, M for comment
         // they can be combined, by default it is EA
-        template: '<a href="#" class="list-group-item list-group-item-action"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">List group item heading</h5><small>3 days ago</small></div><p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p><small>Donec id elit non mi porta.</small></a>',
+        templateUrl: 'directives/search-results.html',
         replace: true // default is false. If false, the whole template block will be wrapped in HTML inside <search-results> tag. If true this tag is hidden
     }
 })
