@@ -78,8 +78,10 @@ myApp.directive('searchResults', function() {
             // but it's potentially dangerous as any directive can change the scope from anywhere
             personName: "@",
             //* here we told directive to expect person-name attribute as we transfer data through it
-            //* @ sign means we transfer only text
-            personAge: "@"
+            //* @ sign means we transfer only text and it's one way binding
+            personAge: "@",
+            personObj: '='
+                //* = sign means we transfer objects and it's two way binding which means everything happening with the object in the view will affect the same object in the controller
         }
     }
 })
