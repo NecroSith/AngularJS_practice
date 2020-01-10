@@ -35,8 +35,16 @@ myApp.controller('mainController', ["$scope", "$log", "$location", "nameService"
 
     $scope.person = {
         name: 'Alex',
-        age: 666
+        age: 666,
+        occupation: 'Medical engineer',
+        sex: 'Male'
     }
+
+    $scope.getPersonInfo = function(person) {
+        return `${person.name}, ${person.sex}, age ${person.age}, occupation: ${person.occupation}`;
+    }
+
+
 
     $scope.$watch('shared', function() {
         nameService.name = $scope.shared;
@@ -80,8 +88,11 @@ myApp.directive('searchResults', function() {
             //* here we told directive to expect person-name attribute as we transfer data through it
             //* @ sign means we transfer only text and it's one way binding
             personAge: "@",
-            personObj: '='
-                //* = sign means we transfer objects and it's two way binding which means everything happening with the object in the view will affect the same object in the controller
+            personObj: '=',
+            //* = sign means we transfer objects and it's two way binding which means everything happening with the object in the view will affect the same object in the controller
+            getPersonInfo: "&"
+                //* & means we transfer a function
+
         }
     }
 })

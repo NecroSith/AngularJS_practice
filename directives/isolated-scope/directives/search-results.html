@@ -5,5 +5,8 @@
     </div>
     <!-- it won't work because this view has isolated scope and we didn't declare 'person.age' as an attribute explicitly -->
     <p class="mb-1">{{personAge}}.</p>
+    <!-- we can't just call a function from the isolated scope here like "getPersonInfo(param)" -->
+    <!-- We need to do object mapping and explicitly tell what objects each param relates to -->
+    <p class="mb-1">{{ getPersonInfo({param: personObj}) }}</p>
     <small>{{personObj.name}}</small>
 </a>
