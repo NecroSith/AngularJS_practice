@@ -1,0 +1,16 @@
+<h1>This is main!</h1>
+<h1>Hello {{ name + '! How are you today?'}}</h1>
+
+<hr>
+
+<input type="text" ng-model="shared" value="{{shared}}">
+
+<hr>
+
+<h3>Search results</h3>
+<div class="list-group">
+    <search-results ng-repeat="person in people" person-obj="person" get-person-info="getPersonInfo(param)">
+        <!-- To make transclude conditional just place ng-if in the nested element -->
+        <p ng-if="person.name !== 'Fox'">*Some results may not be valid</p>
+    </search-results>
+</div>
