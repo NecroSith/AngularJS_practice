@@ -100,7 +100,19 @@ myApp.directive('searchResults', function() {
             personObj: '=',
             getPersonInfo: "&"
         },
-        compile: function(elem, attrs) {
+        // Link is used instead of compile. it's safer to use it. It does post linking as well as compile post property
+        link: function(scope, elems, attrs) {
+            console.log('linking...');
+
+            // we can change the view as we see fit
+            // and use scope for it
+            // scope contains personObj and all its properties for all people
+            if (scope.personObj.name === 'Alex') {
+                elems.removeAttr('class');
+            }
+            console.log(elems);
+        },
+        __compile: function(elem, attrs) { //! underlines before the word here is to disabled compile property so Angular won't find it and use link instead
 
             //Code inside compile if you want to use something in the entire directive html
             // Pre and post is used if we want to change comething in every instance of a directive
@@ -112,7 +124,7 @@ myApp.directive('searchResults', function() {
                 // Pre link is used to pass through all nested directives inside current one if there are any
                 //* It's not recommended to use pre link as it could be dangerous
                 pre: function(scope, elem, attrs) {
-                    console.log('Pre-compiling...');
+                    console.log('Pre-linking...');
                     console.log(elem);
 
                 },
@@ -123,18 +135,18 @@ myApp.directive('searchResults', function() {
                 //* So we have model-view pair for every repeated instance of search-results in ng-repeat
                 //! It's not dependency injection that is used here
                 post: function(scope, elem, attrs) {
-                    console.log('Post-compiling...');
+                    console.log('Post-linking...');
 
                     // we can change the view as we see fit
                     // and use scope for it
                     // scope contains personObj and all its properties for all people
                     if (scope.personObj.name === 'Alex') {
-                        elem.removeAttr('class');
+                        // elem.removeAttr('class');
                     }
                     console.log(elem);
                 }
             }
-        }
+        },
 
     }
 })
