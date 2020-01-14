@@ -12,14 +12,26 @@ weatherApp.config(function($routeProvider, $locationProvider) {
         });
 
     $locationProvider.html5Mode(false).hashPrefix('');
-})
+});
 
-weatherApp.controller('mainController', ["$scope", function($scope) {
-    console.log('main!');
+weatherApp.service('nameService', function() {
+    this.name = '';
+});
+
+
+weatherApp.controller('mainController', ["$scope", "nameService", function($scope, nameService) {
+    $scope.city = nameService.name;
+
+    $scope.$watch('city', function() {
+        nameService.name = $scope.city;
+    });
 
 }]);
 
-weatherApp.controller('forecastController', ["$scope", function($scope) {
-    console.log('forecast!');
+weatherApp.controller('forecastController', ["$scope", "nameService", function($scope, nameService) {
+    $scope.city = nameService.name;
 
-}])
+    $scope.$watch('city', function() {
+        nameService.name = $scope.city;
+    });
+}]);
