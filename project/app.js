@@ -16,6 +16,9 @@ weatherApp.config(function($routeProvider, $locationProvider) {
 
 weatherApp.service('nameService', function() {
     this.name = '';
+
+    this.api = "http://api.openweathermap.org/data/2.5/weather?";
+    this.appId = "ee402bb9e02561ade4fa74681127a056";
 });
 
 
@@ -28,10 +31,26 @@ weatherApp.controller('mainController', ["$scope", "nameService", function($scop
 
 }]);
 
-weatherApp.controller('forecastController', ["$scope", "nameService", function($scope, nameService) {
+weatherApp.controller('forecastController', ["$scope", "$resource", "nameService", function($scope, $resource, nameService) {
     $scope.city = nameService.name;
 
     $scope.$watch('city', function() {
         nameService.name = $scope.city;
     });
+
+    $scope.weatherAPI = $resource(nameService.api, {
+        get: {
+            method: "JSONP" // for browser to not block the request
+        }
+    });
+
+    $scope.weatherResult = $scope.weatherAPI.get({ q: $scope.city, APPID: nameService.appId });
+
+    $scope.convertToCelcius = function(degK) {
+        return Math.round(degK - 273, 4);
+    }
+
+    $scope.convertToDate = function(dt) {
+        return new Date(dt * 1000);
+    }
 }]);
