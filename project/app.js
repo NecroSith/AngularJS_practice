@@ -9,7 +9,11 @@ weatherApp.config(function($routeProvider, $locationProvider) {
         .when('/details', {
             templateUrl: './pages/details.html',
             controller: 'forecastController'
-        });
+        })
+        .when('/details/:days', {
+            templateUrl: './pages/details.html',
+            controller: 'forecastController'
+        })
 
     $locationProvider.html5Mode(false).hashPrefix('');
 });
@@ -31,12 +35,14 @@ weatherApp.controller('mainController', ["$scope", "nameService", function($scop
 
 }]);
 
-weatherApp.controller('forecastController', ["$scope", "$resource", "nameService", function($scope, $resource, nameService) {
+weatherApp.controller('forecastController', ["$scope", "$resource", "nameService", "$routeParams", function($scope, $resource, nameService, $routeParams) {
     $scope.city = nameService.name;
 
     $scope.$watch('city', function() {
         nameService.name = $scope.city;
     });
+
+    $scope.days = $routeParams.days;
 
     $scope.weatherAPI = $resource(nameService.api, {
         get: {

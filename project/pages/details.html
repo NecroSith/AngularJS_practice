@@ -1,10 +1,13 @@
 <div class="container">
     <div class="row">
-        <p>Weather forecast for {{city}}</p>
+        <p>Weather forecast for {{city}} {{ days ? 'for ' + days + ' days' : ''}} </p>
+    </div>
+    <div class="row">
+        Days: <a href="#/details/2" ng-class="{ 'bg-primary': days == 2}">2</a> | <a href="#/details/5" ng-class="{ 'bg-primary': days == 5}">5</a> | <a href="#/details/7" ng-class="{ 'bg-primary': days == 7}">7</a>
     </div>
     <a href="#" class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{ city }} for {{ convertToDate(weatherResult.dt) }}</h5>
+            <h5 class="mb-1">{{ city }} for {{ convertToDate(weatherResult.dt) | date: 'MMM d, y' }}</h5>
         </div>
         <span>Daytime temperature: <h2 class="mb-1">{{convertToCelcius(weatherResult.main.temp)}}.</h2></span>
 
