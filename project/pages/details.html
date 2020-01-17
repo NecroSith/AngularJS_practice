@@ -1,9 +1,14 @@
-<div class="container">
-    <div class="row">
+<div class="container col-md-6 mt-5">
+    <div>
         <p>Weather forecast for {{city}} {{ days ? 'for ' + days + ' days' : ''}} </p>
     </div>
-    <div class="row">
-        Days: <a href="#/details/2" ng-class="{ 'bg-primary': days == 2}">2</a> | <a href="#/details/5" ng-class="{ 'bg-primary': days == 5}">5</a> | <a href="#/details/7" ng-class="{ 'bg-primary': days == 7}">7</a>
+    <div>
+        Days: <a type="button" href="#/details/2" class="btn text-light" ng-class="{ 'bg-primary text-light': days == 2, 'bg-light text-dark': days != 2}">2</a>
+        <a type="button" href="#/details/5" class="btn text-light" ng-class="{ 'bg-primary text-light': days == 5, 'bg-light text-dark': days != 5}">5</a>
+        <a type="button" href="#/details/7" class="btn text-light" ng-class="{ 'bg-primary text-light': days == 7, 'bg-light text-dark': days != 7}">7</a>
     </div>
-    <weather-results city={{city}} weather-date="convertToDate(date)" temp="convertToCelcius(daytimeTemp)" feels-like="convertToCelcius(feelsLikeTemp)" weather-result="weatherResult"></weather-results>
+    <div class="row">
+        <weather-results city={{city}} weather-date="convertToDate(date)" temp="convertToCelcius(daytimeTemp)" feels-like="convertToCelcius(feelsLikeTemp)" weather-result="weatherResult"></weather-results>
+    </div>
+
 </div>

@@ -1,8 +1,11 @@
-<a href="#" class="list-group-item list-group-item-action">
+<a href="#" class="list-group-item list-group-item-action mt-4 col-md-5">
     <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ city }} for {{ weatherDate({date: weatherResult.dt}) | date: dateFormat }}</h5>
-    </div>
-    <span>Daytime temperature: <h2 class="mb-1">{{temp({daytimeTemp: weatherResult.main.temp})}}.</h2></span>
+        <h5 class="mb-1">{{ city }}</h5>
 
-    <p class="mb-1">Feels like {{feelsLike({feelsLikeTemp: weatherResult.main.feels_like})}}</p>
+        <p>{{ weatherDate({date: weatherResult.dt}) || '~' | date: dateFormat }}</p>
+
+    </div>
+    <span>Daytime temperature: <h1 class="mb-1 mx-auto">{{temp({daytimeTemp: weatherResult.main.temp}) || '~'}}</h1></span>
+
+    <p class="mb-1">Feels like <b>{{feelsLike({feelsLikeTemp: weatherResult.main.feels_like}) || '~' }}</b></p>
 </a>
