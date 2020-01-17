@@ -19,7 +19,7 @@ weatherApp.config(function($routeProvider, $locationProvider) {
 });
 
 weatherApp.service('nameService', function() {
-    this.name = '';
+    this.name = 'Severodvinsk';
 
     this.api = "http://api.openweathermap.org/data/2.5/weather?";
     this.appId = "ee402bb9e02561ade4fa74681127a056";
@@ -60,3 +60,19 @@ weatherApp.controller('forecastController', ["$scope", "$resource", "nameService
         return new Date(dt * 1000);
     }
 }]);
+
+weatherApp.directive('weatherResults', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'directives/weather-results.html',
+        replace: true,
+        scope: {
+            city: "@",
+            weatherDate: "&",
+            dateFormat: "@",
+            temp: "&",
+            feelsLike: "&",
+            weatherResult: "="
+        }
+    }
+})
