@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <base href="#/">
+</head>
+
+<body>
+    <a href="#/">Main</a>
+    <a href="#/second">Second</a>
+    <a href="#/second/3">Second with param</a>
+    <div class="container">
+
+        <!-- We can also reference the controller by its name like this -->
+        <div ng-controller="mainController as mc">
+            {{message}}
+            <div class="list-group">
+                <div ng-controller="secondController">
+                    <!-- And access it from the nested controllers. IT WILL BE LOOKING FOR this.message INSTEAD OF $scope.message -->
+                    {{mc.message}}
+                    <!-- To access scope objects in parent we can use $parent  -->
+                    {{$parent.message}} {{message}}
+                    <!-- Alternatively, we can define an object in parent scope with unique name in which we put data we need -->
+                    <!-- And access this object from child. Angular won't find this object on child's scope so it will be looking for it in the upper scope -->
+                    {{parent1vm.message}}
+                    <div ng-controller="thirdController">
+                        {{message}}
+                        <input type="text" ng-model="mc.message">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+
+</html>
