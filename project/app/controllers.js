@@ -23,8 +23,7 @@ weatherApp.controller('forecastController', ["$scope", "nameService", "$routePar
     });
 
     $scope.days = $routeParams.days;
-
-    $scope.weatherResult = weatherService.getWeather($scope.city)
+    $scope.weatherResult = weatherService.getWeather($scope.city);
 
 
     $scope.convertToCelcius = function(degK) {

@@ -1,11 +1,11 @@
-<a href="#" class="list-group-item list-group-item-action mt-4 col-md-5">
+<a href="#" class="list-group-item list-group-item-action mt-4 col-md-5" ng-repeat="day in weatherResult.data">
     <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{ city }}</h5>
 
-        <p>{{ weatherDate({date: weatherResult.dt}) || '~' | date: dateFormat }}</p>
+        <p>{{ weatherDate({date: day.ts}) || '~' | date: dateFormat }}</p>
 
     </div>
-    <span>Daytime temperature: <h1 class="mb-1 mx-auto">{{temp({daytimeTemp: weatherResult.main.temp}) || '~'}}</h1></span>
+    <span>Daytime temperature: <h1 class="mb-1 mx-auto">{{temp({daytimeTemp: day.high_temp}) || '~'}}</h1></span>
 
     <p class="mb-1">Feels like <b>{{feelsLike({feelsLikeTemp: weatherResult.main.feels_like}) || '~' }}</b></p>
 </a>
