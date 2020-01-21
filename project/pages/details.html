@@ -8,7 +8,7 @@
         <a type="button" href="#/details/7" class="btn text-light" ng-class="{ 'bg-primary text-light': days == 7, 'bg-light text-dark': days != 7}">7</a>
     </div>
     <div class="row">
-        <weather-results city={{city}} weather-date="convertToDate(date)" temp="convertToCelcius(daytimeTemp)" feels-like="convertToCelcius(feelsLikeTemp)" weather-result="weatherResult"></weather-results>
+        <weather-results city={{city}} weather-date="convertToDate(date)" temp="convertToCelcius(daytimeTemp)" feels-like="convertToCelcius(feelsLikeTemp)" weather-result="weatherResult" convert-to-mm-hg="convertToMmHg(pres)"></weather-results>
     </div>
 
 </div>

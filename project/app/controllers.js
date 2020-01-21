@@ -26,8 +26,8 @@ weatherApp.controller('forecastController', ["$scope", "nameService", "$routePar
     $scope.weatherResult = weatherService.getWeather($scope.city);
 
 
-    $scope.convertToCelcius = function(degK) {
-        return Math.round(degK - 273, 4);
+    $scope.convertToMmHg = function(pres) {
+        return Math.round(pres * 1.33322387415);
     };
 
     $scope.convertToDate = function(dt) {

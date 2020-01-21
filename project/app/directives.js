@@ -9,7 +9,8 @@ weatherApp.directive('weatherResults', function() {
             dateFormat: "@",
             temp: "&",
             feelsLike: "&",
-            weatherResult: "="
+            weatherResult: "=",
+            convertToMmHg: "&"
         }
     }
 })
