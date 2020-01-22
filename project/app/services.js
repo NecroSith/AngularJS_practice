@@ -14,6 +14,6 @@ weatherApp.service('weatherService', ["$resource", "$routeParams", function($res
             }
         });
 
-        return weatherAPI.get({ city: city, key: this.appId, days: $routeParams.days });
+        return weatherAPI.get({ city: city, key: this.appId, days: $routeParams.days || 2 });
     }
 }])

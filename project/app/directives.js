@@ -5,12 +5,9 @@ weatherApp.directive('weatherResults', function() {
         replace: true,
         scope: {
             city: "@",
-            weatherDate: "&",
-            dateFormat: "@",
-            temp: "&",
-            feelsLike: "&",
-            weatherResult: "=",
-            convertToMmHg: "&"
+            dateFormat: "@", // Just value
+            weatherResult: "=", // two way binding
+            convertToMmHg: "&" // function
         }
     }
 })

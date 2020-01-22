@@ -1,11 +1,12 @@
-<a href="#" class="list-group-item list-group-item-action mt-4 col-md-5" ng-repeat="day in weatherResult.data">
+<div class="list-group-item list-group-item-action mt-4 col-md-4 ml-2 mr-2" ng-repeat="day in weatherResult.data">
     <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ city }}</h5>
+        <h5 class="mb-1">{{ day.valid_date || '~' | date: dateFormat }}</h5>
 
-        <p>{{ day.valid_date || '~' | date: dateFormat }}</p>
+        <p>Wind: {{ (day.wind_spd).toFixed(1)}} m/s</p>
 
     </div>
     <span>Daytime temperature: <h1 class="mb-1 mx-auto">{{day.high_temp || '~'}} &deg;C</h1></span>
-
-    <p class="mb-1"><b>{{convertToMmHg({ pres: day.pres}) || '~' }}</b></p>
-</a>
+    <hr>
+    <p class="mb-1">Pressure: <b>{{ convertToMmHg({ pres: day.slp}) }}</b> mm Hg</p>
+    <p class="mb-1">Humidity: <b>{{ day.rh }}</b>%</p>
+</div>
