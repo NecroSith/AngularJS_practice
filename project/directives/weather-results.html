@@ -5,7 +5,7 @@
         <p>Wind: {{ (day.wind_spd).toFixed(1)}} m/s</p>
 
     </div>
-    <span>Daytime temperature: <h1 class="mb-1 mx-auto">{{day.high_temp || '~'}} &deg;C</h1></span>
+    <span>Daytime temperature: <h1 class="mb-1 mx-auto">{{(day.temp).toFixed(0) || '~'}} &deg;C</h1></span>
     <hr>
     <p class="mb-1">Pressure: <b>{{ convertToMmHg({ pres: day.slp}) }}</b> mm Hg</p>
     <p class="mb-1">Humidity: <b>{{ day.rh }}</b>%</p>
